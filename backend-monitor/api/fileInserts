@@ -1,0 +1,118 @@
+mutation{
+  createUser(input:{
+    name: "Elanan Rodrigues"
+    email: "eladote@gmail.com"
+    password: "123456"
+  }) {
+    id
+    password
+  }
+}
+
+mutation{
+  createPaciente(input:{ 
+    prontuario: "123",
+    nome: "Oliver Martin Gomes",
+    nivel: "vermelho",
+    atendimento: "Realizado",
+    data: "12/06/19 - 16:17"
+  }){
+    nome
+  }
+}
+
+query{
+  login(email: "eladote@gmail.com", password: "123456") {
+    userId
+    token
+    tokenExpiration
+  }
+}
+
+mutation{
+  createPaciente(
+  pacientes:{
+    prontuario: "123",
+    nome: "Oliver Martin Gomes",
+    nivel: "vermelho",
+    atendimento: "Realizado",
+    data: "12/06/19 - 16:17"
+  },
+  sintomas:{
+    cabeca: "5(imensa)",
+    braco:"4(moderada)",
+    perna: "5(imensa)",
+    tosse: "1(fraca)",
+    fraqueza: "5(Alta)"
+  }) {
+    id
+  }
+}
+
+mutation{
+  createPaciente(
+  pacientes:{
+    prontuario: "123",
+    nome: "Oliver Martin Gomes",
+    nivel: "vermelho",
+    atendimento: "Realizado",
+    data: "12/06/19 - 16:17"
+  },
+  sintomas:{
+    cabeca: "5(imensa)",
+    braco:"4(moderada)",
+    perna: "5(imensa)",
+    tosse: "1(fraca)",
+    fraqueza: "5(Alta)"
+  }) {
+    id
+    prontuario
+    nome
+    nivel
+    atendimento
+    data
+    sintomas{
+      cabeca
+      braco
+      perna
+      tosse
+      fraqueza
+    }
+  }
+}
+
+query{
+  getPacientes{
+    id
+    prontuario
+    nome
+    nivel
+    atendimento
+    data
+    sintomas{
+      cabeca
+      braco
+      perna
+      tosse
+      fraqueza
+    }
+  }
+}
+
+query{
+  getPaciente(id:11){
+    id
+    prontuario
+    nome
+    nivel
+    atendimento
+    data
+    sintomas{
+      cabeca
+      braco
+      perna
+      tosse
+      fraqueza
+    }
+  }
+}
