@@ -4,7 +4,7 @@ module.exports = {
     host: '127.0.0.1',
     database: 'graphql',
     user: 'postgres',
-    password: 'root'
+    password: 'postgres'
   },
   pool: {
     min: 2,
